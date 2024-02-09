@@ -1,13 +1,23 @@
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin <your GitHub repository URL>
-git push -u origin master
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas_datareader as data
+import yfinance as yf
 
-st.set_page_config(layout="wide")
+from keras.models import load_model
+import streamlit as st
 
-st.set_page_config(layout="wide", sharing="streamlit/cloud")
+start = '2010-01-01'
+end = '2019-12-01'
 
-git add .
-git commit -m "Update Streamlit sharing settings"
-git push
+
+st.title("Stock Market trend")
+
+user_input = st.text_input('Enter ticker', 'TSLA')
+# Use yfinance to fetch stock data
+df = yf.download('TSLA', start=start, end=end)
+
+#Describe the data
+
+st.subheader('Data from 2010 to 2019')
+st.write(df.describe())
