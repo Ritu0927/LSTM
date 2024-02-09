@@ -1,0 +1,13 @@
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin <your GitHub repository URL>
+git push -u origin master
+
+st.set_page_config(layout="wide")
+
+st.set_page_config(layout="wide", sharing="streamlit/cloud")
+
+git add .
+git commit -m "Update Streamlit sharing settings"
+git push
