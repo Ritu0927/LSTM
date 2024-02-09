@@ -15,7 +15,7 @@ st.title("Stock Market trend")
 
 user_input = st.text_input('Enter ticker', 'TSLA')
 # Use yfinance to fetch stock data
-df = yf.download('TSLA', start=start, end=end)
+df = yf.download(user_input, start=start, end=end)
 
 #Describe the data
 
